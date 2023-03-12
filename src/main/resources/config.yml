@@ -1,0 +1,60 @@
+
+# Varable %message%, %player%, %version%, %amount_multiply%, %amount%
+
+general:
+  skip_check: false
+  phone_number: '#EnterPhoneNumberHere#'
+  console_command:
+    - 'say %player% topup with VoucherTopup %amount% (%amount_multiply%)'
+    - 'eco add %player% %amount%'
+  aliases:
+    - 'truewallet'
+    - 'tw'
+  multiply: 1.00
+message:
+  chat:
+    success: '&8[&bVoucherTopup&8] &aOK -> %amount%THB (%amount_double%THB)'
+    fail: '&8[&bVoucherTopup&8] &cError -> %message%'
+    error: '&8[&bVoucherTopup&8] &cTopup error please contact admin!'
+    check: '&8[&bVoucherTopup&8] &eChecking, please wait...'
+    help:
+      - '&8[&bVoucherTopup&8] &fVoucherTopup v%version% by MCCH team.'
+      - '&8[&bVoucherTopup&8] &fUsage: /voucher <url/voucher_hash>'
+  action_bar:
+    success: 'Topup success! amount: %amount%THB (%amount_double%THB)'
+    fail: '&cTopup failed: %message%'
+    error: '&cError! please contact admin!'
+    check: '&aPlease wait...'
+  title:
+    success: 'Thanks for donate!'
+    fail: '&cFAILED'
+    error: '&cERROR'
+    check: '&eChecking'
+  sub_title:
+    success: '&a%amount%THB (%amount_double%THB)'
+    fail: '&c%message%'
+    error: '&cPlease contact admin!'
+    check: '&bPlease wait...'
+#Old (1.8) https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/mapping-and-modding-tutorials/2213619-1-8-all-playsound-sound-arguments
+#New (1.9 or newer) http://www.theredengineer.com/1.9-playsound-list.html
+sound:
+  on_type_command:
+    sound: 'entity.item.pickup'
+    volume: 1.0
+    pitch: 1.0
+  on_check:
+    sound: 'block.piston.extend'
+    volume: 1.0
+    pitch: 1.0
+  on_error:
+    sound: 'block.anvil.break'
+    volume: 1.0
+    pitch: 1.0
+  on_fail:
+    sound: 'block.anvil.break'
+    volume: 1.0
+    pitch: 1.0
+  on_success:
+    sound: 'entity.experience_orb.pickup'
+    volume: 1.0
+    pitch: 1.0
