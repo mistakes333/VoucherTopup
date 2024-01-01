@@ -25,9 +25,8 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-    - run: java -version && mvn --version
     - run: mvn --activate-profiles dist --no-transfer-progress package
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: BungeeCord
+        name: VoucherTopup
         path: target/VoucherTopup-*.jar
