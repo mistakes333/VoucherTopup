@@ -10,9 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -29,6 +26,6 @@ jobs:
     - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: TrMenu Artifact
+          name: VoucherTopup Artifact
           path: target/VoucherTopup-*.jar
           
