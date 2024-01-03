@@ -31,8 +31,4 @@ jobs:
       with:
         name: VoucherTopup
         path: target/VoucherTopup-*.jar
-    - run: java -version && mvn --version
-    - uses: uses: actions/download-artifact@v3.0.2
-      with:
-        name: Download
-        path: target/VoucherTopup-*.jar
+ 
