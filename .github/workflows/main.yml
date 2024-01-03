@@ -27,7 +27,7 @@ jobs:
           ${{ runner.os }}-maven-
     - run: java -version && mvn --version
     - run: mvn clean package
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v3
       with:
         name: VoucherTopup
         path: target/VoucherTopup-*.jar
