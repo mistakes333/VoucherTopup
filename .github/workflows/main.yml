@@ -1,6 +1,6 @@
 name: Maven Build
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -26,8 +26,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - run: java -version && mvn --version
-    - run: mvn clean package
+    - run: mvn clean install
     - uses: actions/upload-artifact@v3
       with:
         name: VoucherTopup
+        path: target/VoucherTopup-*.jar
+    - uses: uses: actions/download-artifact@v3.0.2
+      with:
+        name: Download
         path: target/VoucherTopup-*.jar
