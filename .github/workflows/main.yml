@@ -19,13 +19,7 @@ jobs:
       with:
         distribution: 'adopt-hotspot'
         java-version: ${{ matrix.java }}
-    - uses: actions/cache@v3
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-    - run: mvn clean package install
+    - run: mvn clean install
     - uses: actions/upload-artifact@v4
       with:
         name: VoucherTopup
