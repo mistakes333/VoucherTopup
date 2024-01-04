@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
-        distribution: [ adopt-hotspot, ]
+        distribution: [ oracle, temurin, adopt, adopt-openj9, adopt-hotspot]
         java-version: ${{ matrix.java }}
     - uses: actions/cache@v3
       with:
@@ -33,4 +33,3 @@ jobs:
         name: VoucherTopup
         path: target/VoucherTopup-*.jar
  
-Update main.yml · mistakes333/VoucherTopup@7e27e58 
