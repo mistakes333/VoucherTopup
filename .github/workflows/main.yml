@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
-        distribution: [ oracle, temurin, adopt, adopt-openj9, adopt-hotspot]
+        distribution: 'oracle', 'temurin', 'adopt', 'adopt-openj9', 'adopt-hotspot'
         java-version: ${{ matrix.java }}
     - uses: actions/cache@v3
       with:
