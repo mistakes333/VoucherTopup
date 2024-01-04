@@ -5,7 +5,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
 
     strategy:
       fail-fast: false
@@ -20,6 +20,7 @@ jobs:
       with:
         distribution: [ 'oracle', 'temurin', 'adopt', 'adopt-openj9', 'adopt-hotspot' ]
         java-version: ${{ matrix.java }}
+        java-package: jdk
     - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
