@@ -1,9 +1,14 @@
 name: Maven Build
 
-push:
+on:
+  push:
     branches:
-    - main
-    - release/*
+      - 'master'
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - 'master'
 
 jobs:
   build:
