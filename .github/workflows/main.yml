@@ -17,14 +17,11 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
-        distribution: 'adopt-hotspot'
+        distribution: [ 'adopt', 'adopt-hotspot', 'adopt-openj9', 'temurin' ]
         java-version: ${{ matrix.java }}
-    - uses: actions/cache@v3
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
+        check-latest: true
+        cache: 'maven'
+    cache-dependency-path: 'pom.xml' # optional
     - run: java -version && mvn --version
     - run: mvn clean install
     - uses: actions/upload-artifact@v3
