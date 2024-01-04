@@ -1,14 +1,7 @@
 name: Maven Build
 
-on:
-  push:
-    branches:
-      - 'main'
-    tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - 'main'
+
+on: [push, pull_request]
 
 jobs:
   build:
@@ -28,8 +21,6 @@ jobs:
         distribution: [ 'adopt', 'adopt-hotspot', 'adopt-openj9', 'temurin' ]
         java-version: ${{ matrix.java }}
         check-latest: true
-        cache: 'maven'
-    cache-dependency-path: 'pom.xml' # optional
     - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
