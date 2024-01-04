@@ -1,6 +1,9 @@
 name: Maven Build
 
-on: [push]
+push:
+    branches:
+    - main
+    - release/*
 
 jobs:
   build:
@@ -22,6 +25,12 @@ jobs:
         check-latest: true
         cache: 'maven'
     cache-dependency-path: 'pom.xml' # optional
+    - uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
     - run: java -version && mvn --version
     - run: mvn clean install
     - uses: actions/upload-artifact@v3
