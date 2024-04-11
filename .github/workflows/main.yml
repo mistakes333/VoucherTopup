@@ -33,4 +33,5 @@ jobs:
       with:
         name: VoucherTopup
         path: target/VoucherTopup-*.jar
- 
+        if-no-files-found: error
+        retention-days: 1095
