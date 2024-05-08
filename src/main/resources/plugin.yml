@@ -1,6 +1,6 @@
 name: VoucherTopup
 version: ${project.version}
-api-version: 1.17.1
+api-version: 1.17
 main: th.in.mcch.vouchertopup.VoucherTopup
 description: a simple plugin to topup with wallet
 website: https://github.com/MinecraftChannel/VoucherTopup
